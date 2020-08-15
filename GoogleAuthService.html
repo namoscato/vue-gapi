@@ -48,6 +48,10 @@
 
 
 
+<div class="description">
+    Exposed as a <code>$gapi</code> member of the <a href="Vue.html">Vue</a> instance.
+</div>
+
 
 
 
@@ -193,7 +197,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line125">line 125</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line103">line 103</a>
     </li></ul></dd>
     
 
@@ -306,7 +310,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line115">line 115</a>
+        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line117">line 117</a>
     </li></ul></dd>
     
 
@@ -418,7 +422,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line283">line 283</a>
+        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line356">line 356</a>
     </li></ul></dd>
     
 
@@ -524,7 +528,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line125">line 125</a>
+        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line127">line 127</a>
     </li></ul></dd>
     
 
@@ -640,7 +644,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line217">line 217</a>
+        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line262">line 262</a>
     </li></ul></dd>
     
 
@@ -687,6 +691,23 @@
 
 
 
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>&lt;script>
+  export default {
+    name: 'login-shortcut-check',
+
+    methods: {
+      login() {
+        if (this.$gapi.isAuthenticated() !== true) {
+          this.$gapi.login()
+        }
+      },
+    },
+  }
+&lt;/script></code></pre>
+
+
 
         
             
@@ -702,7 +723,7 @@
 
 
 <div class="description">
-    Determines if the user is signed in via Google.
+    Determines if the user is signed in via Google. Can be used inside v-if views.
 </div>
 
 
@@ -749,7 +770,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line229">line 229</a>
+        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line289">line 289</a>
     </li></ul></dd>
     
 
@@ -801,6 +822,21 @@
     
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>&lt;script>
+  export default {
+    name: 'is-signed-in',
+
+    computed: {
+      isSignedIn() {
+        return this.$gapi.isSignedIn()
+      },
+    },
+  }
+&lt;/script></code></pre>
 
 
 
@@ -915,7 +951,7 @@ Will also determine if the login token is valid using google methods and return 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line243">line 243</a>
+        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line316">line 316</a>
     </li></ul></dd>
     
 
@@ -1035,7 +1071,7 @@ Will also determine if the login token is valid using google methods and return 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line139">line 139</a>
+        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line141">line 141</a>
     </li></ul></dd>
     
 
@@ -1087,6 +1123,21 @@ Will also determine if the login token is valid using google methods and return 
     
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>&lt;script>
+  export default {
+    name: 'login-shortcut',
+
+    methods: {
+      login() {
+        this.$gapi.login()
+      },
+    },
+  }
+&lt;/script></code></pre>
 
 
 
@@ -1148,7 +1199,7 @@ Will also determine if the login token is valid using google methods and return 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line193">line 193</a>
+        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line225">line 225</a>
     </li></ul></dd>
     
 
@@ -1202,6 +1253,21 @@ Will also determine if the login token is valid using google methods and return 
 
 
 
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>&lt;script>
+  export default {
+    name: 'logout-shortcut',
+
+    methods: {
+      login() {
+        this.$gapi.logout()
+      },
+    },
+  }
+&lt;/script></code></pre>
+
+
 
         
             
@@ -1218,6 +1284,8 @@ Will also determine if the login token is valid using google methods and return 
 
 <div class="description">
     Forces a refresh of the access token.
+
+This should be placed in your App.vue on the created page and run on a timer of 45min.
 </div>
 
 
@@ -1261,7 +1329,7 @@ Will also determine if the login token is valid using google methods and return 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line179">line 179</a>
+        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line194">line 194</a>
     </li></ul></dd>
     
 
@@ -1295,6 +1363,23 @@ Will also determine if the login token is valid using google methods and return 
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>&lt;script>
+    name: 'App'
+
+    created () {
+    try {
+      // NOTE: 45min refresh policy is what google recommends
+      window.setInterval(this.$gapi.refreshToken(), 2.7e+6)
+    } catch (e) {
+      console.error(e)
+    }
+
+  }
+&lt;/script></code></pre>
 
 
 
@@ -1592,7 +1677,7 @@ Will also determine if the login token is valid using google methods and return 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line266">line 266</a>
+        <a href="GoogleAuthService.js.html">GoogleAuthService.js</a>, <a href="GoogleAuthService.js.html#line339">line 339</a>
     </li></ul></dd>
     
 
@@ -1637,7 +1722,7 @@ Will also determine if the login token is valid using google methods and return 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Sat Aug 15 2020 12:20:28 GMT+0000 (Coordinated Universal Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.5</a> on Sat Aug 15 2020 13:13:59 GMT+0000 (Coordinated Universal Time)
 </footer>
 
 <script> prettyPrint(); </script>
